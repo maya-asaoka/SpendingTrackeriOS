@@ -12,6 +12,8 @@
 		325AB7CE20F3F90400021373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325AB7CC20F3F90400021373 /* Main.storyboard */; };
 		325AB7D020F3F90500021373 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325AB7CF20F3F90500021373 /* Assets.xcassets */; };
 		325AB7D320F3F90500021373 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325AB7D120F3F90500021373 /* LaunchScreen.storyboard */; };
+		325AB7DB20F4082E00021373 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325AB7DA20F4082E00021373 /* Entry.swift */; };
+		325AB7DD20F4104100021373 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325AB7DC20F4104100021373 /* ViewControllerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		325AB7CF20F3F90500021373 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		325AB7D220F3F90500021373 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		325AB7D420F3F90500021373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		325AB7DA20F4082E00021373 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		325AB7DC20F4104100021373 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				325AB7CF20F3F90500021373 /* Assets.xcassets */,
 				325AB7D120F3F90500021373 /* LaunchScreen.storyboard */,
 				325AB7D420F3F90500021373 /* Info.plist */,
+				325AB7DA20F4082E00021373 /* Entry.swift */,
+				325AB7DC20F4104100021373 /* ViewControllerTableViewCell.swift */,
 			);
 			path = SpendingTrackeriOS;
 			sourceTree = "<group>";
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				325AB7DB20F4082E00021373 /* Entry.swift in Sources */,
 				325AB7CB20F3F90400021373 /* ViewController.swift in Sources */,
+				325AB7DD20F4104100021373 /* ViewControllerTableViewCell.swift in Sources */,
 				325AB7C920F3F90400021373 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
