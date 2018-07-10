@@ -14,6 +14,7 @@
 		325AB7D320F3F90500021373 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325AB7D120F3F90500021373 /* LaunchScreen.storyboard */; };
 		325AB7DB20F4082E00021373 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325AB7DA20F4082E00021373 /* Entry.swift */; };
 		325AB7DD20F4104100021373 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325AB7DC20F4104100021373 /* ViewControllerTableViewCell.swift */; };
+		32F6622B20F433180009FAD0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F6622A20F433180009FAD0 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		325AB7D420F3F90500021373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		325AB7DA20F4082E00021373 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		325AB7DC20F4104100021373 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		32F6622A20F433180009FAD0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				325AB7D420F3F90500021373 /* Info.plist */,
 				325AB7DA20F4082E00021373 /* Entry.swift */,
 				325AB7DC20F4104100021373 /* ViewControllerTableViewCell.swift */,
+				32F6622A20F433180009FAD0 /* SettingsViewController.swift */,
 			);
 			path = SpendingTrackeriOS;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				325AB7DB20F4082E00021373 /* Entry.swift in Sources */,
 				325AB7CB20F3F90400021373 /* ViewController.swift in Sources */,
 				325AB7DD20F4104100021373 /* ViewControllerTableViewCell.swift in Sources */,
+				32F6622B20F433180009FAD0 /* SettingsViewController.swift in Sources */,
 				325AB7C920F3F90400021373 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
