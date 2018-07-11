@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SortingDelegate {
     
     @IBOutlet weak var totalView: UILabel!
     
@@ -43,6 +43,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         totalView.text = "Total: $" + String(format: "%.2f", calculateTotal())
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! SettingsViewController
+        controller.delegate = self
+    }
+    
     func calculateTotal() -> Double {
         var total = 0.00
         for entry in entries {
@@ -52,20 +57,36 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
+    // methods for managing categories
+    
+    func addCategory(cat : String) {
+        if (!categories.contains(cat)) {
+            categories.append(cat)
+            categories.sort()
+        }
+    }
+    
+    func removeCategory(cat : String) {
+        categories = categories.filter( { $0 != cat } )
+    }
+    
+    
+    
+    
     // methods for managing entries
     
     func sortByMostRecent() {
         entries.sort {
             if ($0.date[$0.date.index($0.date.startIndex, offsetBy: 6)...] != $1.date[$1.date.index($1.date.startIndex, offsetBy: 6)...]) {
-                return $0.date[$0.date.index($0.date.startIndex, offsetBy: 6)...] < $1.date[$1.date.index($1.date.startIndex, offsetBy: 6)...]
+                return $0.date[$0.date.index($0.date.startIndex, offsetBy: 6)...] > $1.date[$1.date.index($1.date.startIndex, offsetBy: 6)...]
             }
             else if ($0.date[$0.date.index($0.date.startIndex, offsetBy: 3)..<$0.date.index($0.date.startIndex, offsetBy: 5)] !=
                      $1.date[$1.date.index($1.date.startIndex, offsetBy: 3)..<$1.date.index($1.date.startIndex, offsetBy: 5)]) {
-                return $0.date[$0.date.index($0.date.startIndex, offsetBy: 3)..<$0.date.index($0.date.startIndex, offsetBy: 5)] <
+                return $0.date[$0.date.index($0.date.startIndex, offsetBy: 3)..<$0.date.index($0.date.startIndex, offsetBy: 5)] >
                     $1.date[$1.date.index($1.date.startIndex, offsetBy: 3)..<$1.date.index($1.date.startIndex, offsetBy: 5)]
             }
             else {
-                return $0.date[..<$0.date.index($0.date.startIndex, offsetBy: 2)] < $1.date[..<$1.date.index($1.date.startIndex, offsetBy: 2)]
+                return $0.date[..<$0.date.index($0.date.startIndex, offsetBy: 2)] > $1.date[..<$1.date.index($1.date.startIndex, offsetBy: 2)]
             }
         }
     }
@@ -81,17 +102,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func addDemoEntries() {
-        entries.append(Entry(desc: "Concert Tickets", amount: 50.00, date: "07/09/18", category: "Entertainment"))
+        entries.append(Entry(desc: "Concert Tickets", amount: 50.00, date: "09/07/18", category: "Entertainment"))
         entries.append(Entry(desc: "Headphones", amount: 119.99, date: "07/07/18", category: "Electronics"))
         entries.append(Entry(desc: "New Book", amount: 20.00, date: "07/07/18", category: "Books"))
-        entries.append(Entry(desc: "Movie Tickets", amount: 12.00, date: "07/01/18", category: "Entertainment"))
-        entries.append(Entry(desc: "Sushi", amount: 13.00, date: "06/28/18", category: "Food"))
-        entries.append(Entry(desc: "New Shirt", amount: 40.00, date: "06/20/18", category: "Clothing"))
-        entries.append(Entry(desc: "Starbucks", amount: 45.50, date: "06/20/18", category: "Food"))
-        entries.append(Entry(desc: "Phone Case", amount: 19.99, date: "06/20/18", category: "Electronics"))
-        entries.append(Entry(desc: "New Shoes", amount: 124.99, date: "06/15/18", category: "Clothing"))
-        entries.append(Entry(desc: "Movie Tickets", amount: 11.99, date: "06/08/18", category: "Entertainment"))
-        entries.append(Entry(desc: "Bus Pass", amount: 30.00, date: "06/01/18", category: "Transportation"))
+        entries.append(Entry(desc: "Movie Tickets", amount: 12.00, date: "01/07/18", category: "Entertainment"))
+        entries.append(Entry(desc: "Sushi", amount: 13.00, date: "28/06/18", category: "Food"))
+        entries.append(Entry(desc: "New Shirt", amount: 40.00, date: "20/06/18", category: "Clothing"))
+        entries.append(Entry(desc: "Starbucks", amount: 45.50, date: "20/06/18", category: "Food"))
+        entries.append(Entry(desc: "Phone Case", amount: 19.99, date: "20/06/18", category: "Electronics"))
+        entries.append(Entry(desc: "New Shoes", amount: 124.99, date: "15/06/18", category: "Clothing"))
+        entries.append(Entry(desc: "Movie Tickets", amount: 11.99, date: "08/06/18", category: "Entertainment"))
+        entries.append(Entry(desc: "Bus Pass", amount: 30.00, date: "01/06/18", category: "Transportation"))
         sortByMostRecent()
     }
 

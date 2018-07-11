@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3210472920F5948E00AC5344 /* AddCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3210472820F5948E00AC5344 /* AddCategoryController.swift */; };
 		325AB7C920F3F90400021373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325AB7C820F3F90400021373 /* AppDelegate.swift */; };
 		325AB7CB20F3F90400021373 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325AB7CA20F3F90400021373 /* ViewController.swift */; };
 		325AB7CE20F3F90400021373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325AB7CC20F3F90400021373 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3210472820F5948E00AC5344 /* AddCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryController.swift; sourceTree = "<group>"; };
 		325AB7C520F3F90400021373 /* SpendingTrackeriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpendingTrackeriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		325AB7C820F3F90400021373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		325AB7CA20F3F90400021373 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				325AB7DA20F4082E00021373 /* Entry.swift */,
 				325AB7DC20F4104100021373 /* ViewControllerTableViewCell.swift */,
 				32F6622A20F433180009FAD0 /* SettingsViewController.swift */,
+				3210472820F5948E00AC5344 /* AddCategoryController.swift */,
 			);
 			path = SpendingTrackeriOS;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3210472920F5948E00AC5344 /* AddCategoryController.swift in Sources */,
 				325AB7DB20F4082E00021373 /* Entry.swift in Sources */,
 				325AB7CB20F3F90400021373 /* ViewController.swift in Sources */,
 				325AB7DD20F4104100021373 /* ViewControllerTableViewCell.swift in Sources */,
