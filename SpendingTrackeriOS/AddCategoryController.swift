@@ -8,12 +8,14 @@
 
 import UIKit
 
-protocol AddCategoryDelegate : class {
-    
-}
-
 class AddCategoryController : UIViewController {
     
-    weak var delegate: AddCategoryDelegate?
+    @IBOutlet weak var categoryNameField: UITextField!
+    
+    @IBAction func confirmAddCategory(_ sender: Any) {
+        NotificationCenter.default.post(name: .saveCategoryName, object: self)
+        dismiss(animated: true)
+    }
+    
     
 }

@@ -16,9 +16,22 @@ protocol SortingDelegate: class {
     func removeCategory(cat : String)
 }
 
-class SettingsViewController : UIViewController, AddCategoryDelegate {
+class SettingsViewController : UIViewController {
     
     weak var delegate: SortingDelegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleAddCategory), name: .saveCategoryName, object: nil)
+    }
+    
+    @objc func handleAddCategory(notification: Notification) {
+        let addCategoryVC = notification.object as! AddCategoryController
+        let categoryName = addCategoryVC.categoryNameField.text!
+        delegate?.addCategory(cat: categoryName)
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func sortByMostRecent(_ sender: Any) {
         delegate?.sortByMostRecent()
@@ -33,11 +46,6 @@ class SettingsViewController : UIViewController, AddCategoryDelegate {
     @IBAction func sortAlphabetically(_ sender: Any) {
         delegate?.sortAlphabetically()
         self.dismiss(animated: true, completion: nil)
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination as! AddCategoryController
-        controller.delegate = self
     }
     
     
