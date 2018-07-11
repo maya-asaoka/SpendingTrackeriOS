@@ -8,43 +8,25 @@
 
 import UIKit
 
-protocol SortingDelegate: class {
-    func sortByMostRecent()
-    func sortByLeastRecent()
-    func sortAlphabetically()
-    func addCategory(cat : String)
-    func removeCategory(cat : String)
-}
-
 class SettingsViewController : UIViewController {
-    
-    weak var delegate: SortingDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(handleAddCategory), name: .saveCategoryName, object: nil)
     }
-    
-    @objc func handleAddCategory(notification: Notification) {
-        let addCategoryVC = notification.object as! AddCategoryController
-        let categoryName = addCategoryVC.categoryNameField.text!
-        delegate?.addCategory(cat: categoryName)
-        self.dismiss(animated: true, completion: nil)
-    }
+
     
     @IBAction func sortByMostRecent(_ sender: Any) {
-        delegate?.sortByMostRecent()
+        NotificationCenter.default.post(name: .sortByMostRecent, object: nil)
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func sortByLeastRecent(_ sender: Any) {
-        delegate?.sortByLeastRecent()
+        NotificationCenter.default.post(name: .sortByLeastRecent, object: nil)
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func sortAlphabetically(_ sender: Any) {
-        delegate?.sortAlphabetically()
+        NotificationCenter.default.post(name: .sortAlphabetically, object: nil)
         self.dismiss(animated: true, completion: nil)
     }
     

@@ -12,4 +12,8 @@ extension Notification.Name {
     
     static let saveCategoryName = Notification.Name(rawValue: "saveCategoryName")
     
+    static let sortByMostRecent = Notification.Name(rawValue: "sortByMostRecent")
+    static let sortByLeastRecent = Notification.Name(rawValue: "sortByLeastRecent")
+    static let sortAlphabetically = Notification.Name(rawValue: "sortAlphabetically")
+    
 }
