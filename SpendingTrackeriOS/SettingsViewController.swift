@@ -16,18 +16,17 @@ class SettingsViewController : UIViewController {
     
     @IBAction func sortByMostRecent(_ sender: Any) {
         NotificationCenter.default.post(name: .sortByMostRecent, object: nil)
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
     
     @IBAction func sortByLeastRecent(_ sender: Any) {
         NotificationCenter.default.post(name: .sortByLeastRecent, object: nil)
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
     
     @IBAction func sortAlphabetically(_ sender: Any) {
         NotificationCenter.default.post(name: .sortAlphabetically, object: nil)
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
-    
     
 }

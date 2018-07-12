@@ -15,6 +15,10 @@ class ViewControllerTableViewCell: UITableViewCell {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var category: UILabel!
     
+    @IBOutlet weak var desc2: UILabel!
+    @IBOutlet weak var amount2: UILabel!
+    @IBOutlet weak var date2: UILabel!
+    @IBOutlet weak var category2: UILabel!
     
     
     override func awakeFromNib() {

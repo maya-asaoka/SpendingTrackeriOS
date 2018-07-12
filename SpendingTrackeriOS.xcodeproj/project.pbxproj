@@ -17,6 +17,7 @@
 		325AB7DD20F4104100021373 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325AB7DC20F4104100021373 /* ViewControllerTableViewCell.swift */; };
 		32DABBBE20F6900E00780542 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DABBBD20F6900E00780542 /* NotificationNameExtension.swift */; };
 		32DABBC020F697F900780542 /* RemoveCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DABBBF20F697F900780542 /* RemoveCategoryController.swift */; };
+		32DABBC220F6E22B00780542 /* RemoveEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DABBC120F6E22B00780542 /* RemoveEntryController.swift */; };
 		32F6622B20F433180009FAD0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F6622A20F433180009FAD0 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		325AB7DC20F4104100021373 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		32DABBBD20F6900E00780542 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 		32DABBBF20F697F900780542 /* RemoveCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCategoryController.swift; sourceTree = "<group>"; };
+		32DABBC120F6E22B00780542 /* RemoveEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveEntryController.swift; sourceTree = "<group>"; };
 		32F6622A20F433180009FAD0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 				3210472820F5948E00AC5344 /* AddCategoryController.swift */,
 				32DABBBD20F6900E00780542 /* NotificationNameExtension.swift */,
 				32DABBBF20F697F900780542 /* RemoveCategoryController.swift */,
+				32DABBC120F6E22B00780542 /* RemoveEntryController.swift */,
 			);
 			path = SpendingTrackeriOS;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DABBC220F6E22B00780542 /* RemoveEntryController.swift in Sources */,
 				32DABBBE20F6900E00780542 /* NotificationNameExtension.swift in Sources */,
 				32DABBC020F697F900780542 /* RemoveCategoryController.swift in Sources */,
 				3210472920F5948E00AC5344 /* AddCategoryController.swift in Sources */,
