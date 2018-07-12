@@ -13,7 +13,6 @@ class SettingsViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
     
     @IBAction func sortByMostRecent(_ sender: Any) {
         NotificationCenter.default.post(name: .sortByMostRecent, object: nil)
