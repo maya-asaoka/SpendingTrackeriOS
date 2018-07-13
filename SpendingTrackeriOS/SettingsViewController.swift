@@ -10,10 +10,6 @@ import UIKit
 
 class SettingsViewController : UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     @IBAction func sortByMostRecent(_ sender: Any) {
         NotificationCenter.default.post(name: .sortByMostRecent, object: nil)
         self.navigationController?.popViewController(animated: true)
@@ -29,8 +25,17 @@ class SettingsViewController : UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    // set datepopupviewcontroller to show correct popup
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
+        if (segue.identifier == "removeCategorySegue") {
+            let removeView = segue.destination as! RemoveController
+            removeView.isRemovingCategory = true
+        }
+        if (segue.identifier == "removeEntrySegue") {
+            let removeView = segue.destination as! RemoveController
+            removeView.isRemovingCategory = false
+        }
     }
     
 }

@@ -54,10 +54,10 @@ class AddEntryController : UIViewController {
             category.setTitle(categoryString, for: .normal)
         }
         if (amount.text!.isEmpty) {
-            showErrorMessage(title: "Incomplete Entry", message: "Please enter amount", vc: self)
+            Alert.showErrorMessage(title: "Incomplete Entry", message: "Please enter amount", vc: self)
         }
         if (!isValidAmount(amount: amount.text!)) {
-            showErrorMessage(title: "Invalid Amount", message: "Please enter valid dollar amount (no commas or dollar signs)", vc: self)
+            Alert.showErrorMessage(title: "Invalid Amount", message: "Please enter valid dollar amount (no commas or dollar signs)", vc: self)
         }
         else if (!amount.text!.isEmpty && isValidAmount(amount: amount.text!)){
             NotificationCenter.default.post(name: .addEntry, object: self)
@@ -72,13 +72,8 @@ class AddEntryController : UIViewController {
         return currencyPredicate.evaluate(with: amount)
     }
     
-    func showErrorMessage(title: String, message: String, vc: UIViewController) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        vc.present(alert, animated: true)
-    }
     
-    // check if choose date or choose category was selected - show correct popup
+    // check whether choose date or choose category button was pressed - show correct popup
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "chooseDateSegue") {
             let popup = segue.destination as! DatePopupViewController

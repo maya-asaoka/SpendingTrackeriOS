@@ -6,6 +6,8 @@
 //  Copyright © 2018 Maya Asaoka. All rights reserved.
 //
 
+// popup for date picker and category picker
+
 import UIKit
 
 class DatePopupViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -14,6 +16,7 @@ class DatePopupViewController : UIViewController, UIPickerViewDelegate, UIPicker
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var categoryPicker: UIPickerView!
+    
     var chosenDate = String()
     var chosenCategory = String()
 
@@ -23,10 +26,12 @@ class DatePopupViewController : UIViewController, UIPickerViewDelegate, UIPicker
         if (showDatePicker == true) {
             datePicker.isHidden = false
             categoryPicker.isHidden = true
+            titleLabel.text = "Choose Date"
         }
         else {
             datePicker.isHidden = true
             categoryPicker.isHidden = false
+            titleLabel.text = "Choose Category"
         }
     }
     

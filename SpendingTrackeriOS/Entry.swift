@@ -6,6 +6,8 @@
 //  Copyright © 2018 Maya Asaoka. All rights reserved.
 //
 
+// entry with description, amount, date, and a category
+
 import Foundation
 
 class Entry {

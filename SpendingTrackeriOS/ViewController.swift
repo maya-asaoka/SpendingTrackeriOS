@@ -10,10 +10,10 @@ import UIKit
 
 struct Arrays {
     
-    static var entries = [Entry]()
     // default categories
     static var categories = ["Books", "Clothing", "Electronics", "Entertainment", "Food", "Gifts", "Medical", "Music", "Other",
-                      "Pets", "Transportation", "Travel"]
+                             "Pets", "Transportation", "Travel"]
+    static var entries = [Entry]()
     
 }
 
@@ -53,9 +53,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
+    
 
-    // calculate total every time view opens
+    // calculate total + reload entries every time view opens
     override func viewWillAppear(_ animated: Bool) {
+        entriesTableView.reloadData()
         totalView.text = "Total: $" + String(format: "%.2f", calculateTotal())
     }
     

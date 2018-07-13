@@ -6,6 +6,8 @@
 //  Copyright © 2018 Maya Asaoka. All rights reserved.
 //
 
+// for displaying entries
+
 import UIKit
 
 class ViewControllerTableViewCell: UITableViewCell {

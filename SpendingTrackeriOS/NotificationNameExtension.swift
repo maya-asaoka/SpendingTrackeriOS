@@ -6,6 +6,8 @@
 //  Copyright © 2018 Maya Asaoka. All rights reserved.
 //
 
+// list of notification names to identify data passed between views
+
 import Foundation
 
 extension Notification.Name {
