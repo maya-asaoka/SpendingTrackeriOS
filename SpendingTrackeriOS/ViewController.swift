@@ -20,6 +20,7 @@ struct Arrays {
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var totalView: UILabel!
+    @IBOutlet weak var entriesTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         NotificationCenter.default.addObserver(self, selector: #selector(sortByMostRecent), name: .sortByMostRecent, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(sortByLeastRecent), name: .sortByLeastRecent, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(sortAlphabetically), name: .sortAlphabetically, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(addEntry), name: .addEntry, object: nil)
     }
     
     
@@ -91,6 +93,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     // methods for managing entries
+    
+    @objc func addEntry(notification: Notification) {
+        let addEntryVC = notification.object as! AddEntryController
+        let descString = addEntryVC.desc.text!
+        let amountDouble = Double(addEntryVC.amount.text!)!
+        let dateString = addEntryVC.dateString
+        let categoryString = addEntryVC.categoryString
+        let newEntry = Entry(desc: descString, amount: amountDouble, date: dateString, category: categoryString)
+        Arrays.entries.append(newEntry)
+        entriesTableView.reloadData()
+    }
     
     @objc func sortByMostRecent() {
         Arrays.entries.sort {

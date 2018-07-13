@@ -14,7 +14,7 @@ class AddCategoryController : UIViewController {
     
     @IBAction func confirmAddCategory(_ sender: Any) {
         NotificationCenter.default.post(name: .saveCategoryName, object: self)
-        dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     

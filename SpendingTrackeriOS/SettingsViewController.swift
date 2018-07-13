@@ -16,17 +16,21 @@ class SettingsViewController : UIViewController {
     
     @IBAction func sortByMostRecent(_ sender: Any) {
         NotificationCenter.default.post(name: .sortByMostRecent, object: nil)
-        dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func sortByLeastRecent(_ sender: Any) {
         NotificationCenter.default.post(name: .sortByLeastRecent, object: nil)
-        dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func sortAlphabetically(_ sender: Any) {
         NotificationCenter.default.post(name: .sortAlphabetically, object: nil)
-        dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        <#code#>
     }
     
 }
