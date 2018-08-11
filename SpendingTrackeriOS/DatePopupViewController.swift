@@ -12,47 +12,66 @@ import UIKit
 
 class DatePopupViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var showDatePicker: Bool = true
+    enum Pickers {
+        case showDatePicker
+        case showCategoryPicker
+        case showMonthYearPicker
+    }
+    
+    var showPicker: Pickers = Pickers.showDatePicker
     
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var categoryPicker: UIPickerView!
+    @IBOutlet weak var picker: UIPickerView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
     
     var chosenDate = String()
     var chosenCategory = String()
-
-    @IBOutlet weak var titleLabel: UILabel!
+    var chosenMonthYear = String()
     
     override func viewWillAppear(_ animated: Bool) {
-        if (showDatePicker == true) {
+        if (showPicker == Pickers.showDatePicker) {
             datePicker.isHidden = false
-            categoryPicker.isHidden = true
+            picker.isHidden = true
             titleLabel.text = "Choose Date"
         }
-        else {
+        if (showPicker == Pickers.showCategoryPicker) {
             datePicker.isHidden = true
-            categoryPicker.isHidden = false
+            picker.isHidden = false
             titleLabel.text = "Choose Category"
+        }
+        if (showPicker == Pickers.showMonthYearPicker) {
+            datePicker.isHidden = false
+            picker.isHidden = true
+            titleLabel.text = "Generate Report For Month"
         }
     }
     
     
     @IBAction func saveData(_ sender: Any) {
-        if (showDatePicker == true) {
+        if (showPicker == Pickers.showDatePicker) {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/YY"
+            dateFormatter.dateFormat = Format.dateFormat
             chosenDate = dateFormatter.string(from: datePicker.date)
             NotificationCenter.default.post(name: .getDate, object: self)
             dismiss(animated: true)
         }
-        else {
-            chosenCategory = Arrays.categories[categoryPicker.selectedRow(inComponent: 0)]
+        if (showPicker == Pickers.showCategoryPicker) {
+            chosenCategory = Arrays.categories[picker.selectedRow(inComponent: 0)]
             NotificationCenter.default.post(name: .getCategory, object: self)
+            dismiss(animated: true)
+        }
+        if (showPicker == Pickers.showMonthYearPicker) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/YYYY"
+            chosenMonthYear = dateFormatter.string(from: datePicker.date)
+            NotificationCenter.default.post(name: .getMonthYear, object: self)
             dismiss(animated: true)
         }
     }
     
     
-    // category picker methods
+    // category/monthyear picker methods
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

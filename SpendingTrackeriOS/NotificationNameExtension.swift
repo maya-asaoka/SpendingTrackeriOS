@@ -22,4 +22,6 @@ extension Notification.Name {
     static let getCategory = Notification.Name(rawValue: "getCategory")
     static let addEntry = Notification.Name(rawValue: "addEntry")
     
+    static let getMonthYear = Notification.Name(rawValue: "getMonthYear")
+    
 }

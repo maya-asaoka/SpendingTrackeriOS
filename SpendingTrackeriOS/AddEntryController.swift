@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct Format {
+    
+    static let dateFormat = "dd/MM/YYYY"
+}
+
 class AddEntryController : UIViewController {
     
     @IBOutlet weak var desc: UITextField!
@@ -44,7 +49,7 @@ class AddEntryController : UIViewController {
         }
         if (date.titleLabel?.text == "choose date") {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/YY"
+            dateFormatter.dateFormat = Format.dateFormat
             // defaults date to current date
             dateString = dateFormatter.string(from: Date())
             date.setTitle(dateString, for: .normal)
@@ -77,11 +82,11 @@ class AddEntryController : UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "chooseDateSegue") {
             let popup = segue.destination as! DatePopupViewController
-            popup.showDatePicker = true
+            popup.showPicker = DatePopupViewController.Pickers.showDatePicker
         }
         if (segue.identifier == "chooseCategorySegue") {
             let popup = segue.destination as! DatePopupViewController
-            popup.showDatePicker = false
+            popup.showPicker = DatePopupViewController.Pickers.showCategoryPicker
         }
     }
     

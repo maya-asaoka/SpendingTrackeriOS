@@ -11,8 +11,8 @@ import UIKit
 struct Arrays {
     
     // default categories
-    static var categories = ["Books", "Clothing", "Electronics", "Entertainment", "Food", "Gifts", "Medical", "Music", "Other",
-                             "Pets", "Transportation", "Travel"]
+    static var categories = ["Beauty", "Books", "Clothing", "Electronics", "Entertainment", "Food", "Gifts", "Medical", "Music", "Other",
+                             "Pets", "School", "Transportation", "Travel"]
     static var entries = [Entry]()
     
 }
@@ -104,6 +104,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let categoryString = addEntryVC.categoryString
         let newEntry = Entry(desc: descString, amount: amountDouble, date: dateString, category: categoryString)
         Arrays.entries.append(newEntry)
+        sortByMostRecent()
         entriesTableView.reloadData()
     }
     
@@ -133,17 +134,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func addDemoEntries() {
-        Arrays.entries.append(Entry(desc: "Concert Tickets", amount: 50.00, date: "09/07/18", category: "Entertainment"))
-        Arrays.entries.append(Entry(desc: "Headphones", amount: 119.99, date: "07/07/18", category: "Electronics"))
-        Arrays.entries.append(Entry(desc: "New Book", amount: 20.00, date: "07/07/18", category: "Books"))
-        Arrays.entries.append(Entry(desc: "Movie Tickets", amount: 12.00, date: "01/07/18", category: "Entertainment"))
-        Arrays.entries.append(Entry(desc: "Sushi", amount: 13.00, date: "28/06/18", category: "Food"))
-        Arrays.entries.append(Entry(desc: "New Shirt", amount: 40.00, date: "20/06/18", category: "Clothing"))
-        Arrays.entries.append(Entry(desc: "Starbucks", amount: 45.50, date: "20/06/18", category: "Food"))
-        Arrays.entries.append(Entry(desc: "Phone Case", amount: 19.99, date: "20/06/18", category: "Electronics"))
-        Arrays.entries.append(Entry(desc: "New Shoes", amount: 124.99, date: "15/06/18", category: "Clothing"))
-        Arrays.entries.append(Entry(desc: "Movie Tickets", amount: 11.99, date: "08/06/18", category: "Entertainment"))
-        Arrays.entries.append(Entry(desc: "Bus Pass", amount: 30.00, date: "01/06/18", category: "Transportation"))
+        Arrays.entries.append(Entry(desc: "Lunch", amount: 13.00, date: "01/09/2018", category: "Food"))
+        Arrays.entries.append(Entry(desc: "Nail Salon", amount: 33.00, date: "01/09/2018", category: "Beauty"))
+        Arrays.entries.append(Entry(desc: "Textbooks", amount: 199.00, date: "03/09/2018", category: "School"))
+        Arrays.entries.append(Entry(desc: "Stationery", amount: 52.00, date: "03/09/2018", category: "School"))
+        Arrays.entries.append(Entry(desc: "Movie Tickets", amount: 11.99, date: "08/08/2018", category: "Entertainment"))
+        Arrays.entries.append(Entry(desc: "Compass Card Reload", amount: 20.00, date: "30/07/2018", category: "Transportation"))
+        Arrays.entries.append(Entry(desc: "Haircut", amount: 45.00, date: "21/07/2018", category: "Beauty"))
+        Arrays.entries.append(Entry(desc: "Concert Tickets", amount: 50.00, date: "09/07/2018", category: "Entertainment"))
+        Arrays.entries.append(Entry(desc: "Headphones", amount: 119.99, date: "07/07/2018", category: "Electronics"))
+        Arrays.entries.append(Entry(desc: "New Book", amount: 20.00, date: "07/07/2018", category: "Books"))
+        Arrays.entries.append(Entry(desc: "Movie Tickets", amount: 12.00, date: "01/07/2018", category: "Entertainment"))
+        Arrays.entries.append(Entry(desc: "Sushi", amount: 13.00, date: "28/08/2018", category: "Food"))
+        Arrays.entries.append(Entry(desc: "New Shirt", amount: 40.00, date: "20/06/2018", category: "Clothing"))
+        Arrays.entries.append(Entry(desc: "Starbucks", amount: 5.50, date: "20/08/2018", category: "Food"))
+        Arrays.entries.append(Entry(desc: "Phone Case", amount: 19.99, date: "20/08/2018", category: "Electronics"))
+        Arrays.entries.append(Entry(desc: "New Shoes", amount: 124.99, date: "15/06/2018", category: "Clothing"))
+        Arrays.entries.append(Entry(desc: "Bus Pass", amount: 30.00, date: "01/06/2018", category: "Transportation"))
         sortByMostRecent()
     }
 
